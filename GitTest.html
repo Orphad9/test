@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test GIT</title>
+    <title>Mon Portfolio</title>
     <style>
         /* Style global */
         body {
@@ -11,12 +11,16 @@
             margin: 0;
             padding: 0;
             background-color: #f0f0f0;
+            min-height: 100vh;
+            position: relative;
+            padding-bottom: 100px; /* Hauteur du footer */
+            box-sizing: border-box;
         }
         
         header {
             background-color: #333;
             color: white;
-            padding: 10px;
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -37,26 +41,49 @@
         header ul li {
             margin: 0 15px;
             cursor: pointer;
+            position: relative;
         }
         
         header ul li:hover {
             text-decoration: underline;
         }
 
+        /* Style des liens du menu */
+        header ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        header ul li a:hover {
+            color: #ddd;
+        }
+
         section {
-            padding: 20px;
+            padding: 40px 20px;
             background-color: #fff;
             text-align: center;
+            min-height: calc(100vh - 160px); /* Ajustement pour footer et header */
         }
 
         section marquee {
             color: #333;
             font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        section h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 10px;
         }
 
         section p {
             font-size: 18px;
             color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
 
         footer {
@@ -73,38 +100,83 @@
             margin-top: 10px;
         }
 
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin-top: 10px;
+            display: block;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
         /* Ajout d'un style pour les images */
         img {
             border-radius: 5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header ul {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            header ul li {
+                margin: 10px 0;
+            }
+
+            section {
+                padding: 20px 10px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div> 
-            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Flogo%2F&psig=AOvVaw2IKOoRofkNnOSVaPmRuDRw&ust=1728032549587000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKCM-Ybt8YgDFQAAAAAdAAAAABAE" alt="logo" width="50px" height="50px"> 
+            <img src="https://pixabay.com/get/g5b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4" alt="logo" width="50px" height="50px"> 
         </div>
         <div>
             <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Inscription</li>
-                <li>Connexion</li>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </header>
     <section>
         <div>
-            <marquee behavior="scroll" direction="left">Bienvenue sur le site du zéro</marquee>
+            <marquee behavior="scroll" direction="left">Bienvenue sur le site d'Arcadius Orpheric</marquee>
         </div>
         <div>
-            <p>Moi c'est Arcadius Orpheric</p>
+            <h1>À Propos de Moi</h1>
+            <p>
+                Bonjour ! Je m'appelle Arcadius Orpheric et je suis un développeur full stack professionnel spécialisé en PHP. Avec plus de 5 ans d'expérience dans le développement web, je crée des applications robustes et performantes adaptées aux besoins de mes clients.
+            </p>
+            <p>
+                Mes compétences incluent le développement front-end avec HTML, CSS, JavaScript, ainsi que le développement back-end avec PHP, Laravel, et MySQL. J'ai également une solide expérience en gestion de bases de données, en optimisation des performances et en sécurité web.
+            </p>
+            <p>
+                Passionné par les nouvelles technologies, je m'efforce constamment de me tenir à jour avec les dernières tendances et meilleures pratiques du développement web. Mon objectif est de fournir des solutions innovantes et efficaces pour aider les entreprises à atteindre leurs objectifs en ligne.
+            </p>
         </div>
     </section>
     <footer>
         <div> 
-            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Flogo%2F&psig=AOvVaw2IKOoRofkNnOSVaPmRuDRw&ust=1728032549587000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKCM-Ybt8YgDFQAAAAAdAAAAABAE" alt="logo" width="50px" height="50px"> 
+            <img src="https://pixabay.com/get/g5b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4" alt="logo" width="50px" height="50px"> 
+        </div>
+        <div>
+            <p>&copy; 2024 Arcadius Orpheric. Tous droits réservés.</p>
+            <a href="#termes">Termes et Conditions d'Utilisation</a>
         </div>
     </footer>
 </body>
